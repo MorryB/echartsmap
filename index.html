@@ -138,6 +138,13 @@
                                 itemStyle: {
                                     areaColor: 'rgba(255,246,241,0.84)' // 鼠标移动到省份时的颜色
                                 }
+                            },
+                            selectedMode:"single", //选择模式，单选，只能选中一个地市
+                            select:{//这个就是鼠标点击后，地图想要展示的配置
+                                disabled:true,//可以被选中
+                                itemStyle:{//相关配置项很多，可以参考echarts官网
+                                    areaColor:"#77e8e4"//选中
+                                }
                             }
                             // 自定义名称映射
                             // nameMap: {
