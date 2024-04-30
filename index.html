@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>ECharts</title>
     <!-- 引入 echarts.js -->
-    <!--script src="\echartsmap\echarts-5.5.0-rc.2\dist\echarts.js"></script>
-    <script src="\echartsmap\echarts-5.5.0-rc.2\test\lib\jquery.min.js"></script-->
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="\echartsmap\echarts-5.5.0-rc.2\dist\echarts.js"></script>
+    <script src="\echartsmap\echarts-5.5.0-rc.2\test\lib\jquery.min.js"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script-->
     <style>
         @font-face {
             font-family: kaiti;
@@ -17,7 +17,7 @@
             display: flex;
             justify-content: center; /* 水平居中 */
             align-items: center; /* 垂直居中 */
-            background-image: url('交互文化框.png');
+            background-image: url('交互背景图30.png');
             background-size: 100% 100%;
         }
         .custom-tooltip {
@@ -34,7 +34,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="map" style="width: 80vw;height:80vh;"></div>
+    <div id="map" style="width:90vw;height:90vh;top: 7vh"></div>
     <script type="text/javascript">
         var dom = document.getElementById('map');
         var myChart = echarts.init(dom, null, {
@@ -90,7 +90,7 @@
                             saveAsImage: {}
                         }
                     },
-                    visualMap: { //图例
+                    visualMap: {
                         min: 32793,
                         max: 2812571,
                         text: ['High', 'Low'],
@@ -98,7 +98,9 @@
                         calculable: true,
                         inRange: {
                             color: ['#F5E3DE','#996061']
-                        }
+                        },
+                        left: 30,
+                        top: "center"
                     },
                     series: [
                         {
@@ -106,7 +108,12 @@
                             type: 'map',
                             map: 'changjiang',
                             label: {
-                                show: true
+                                show: true,
+                                textStyle: {
+                                    fontFamily: "kaiti",
+                                    fontSize: 16
+                                }
+
                             },
                             data: [
                                 { name: '西藏自治区', value: 148355, museum1:'西藏博物馆',museum2:'西藏耗牛博物馆',museum3:'林芝市藏东南文化遗产博物馆'},
